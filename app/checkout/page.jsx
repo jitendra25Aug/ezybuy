@@ -16,14 +16,13 @@ const CheckoutPage = () => {
         <>
             <PageHero title="checkout" />
             {
-                cart.length > 0 ? <CheckoutForm /> : (
-                    <div className="page flex justify-center items-center bg-red-800">
-                        <div className="text-center">
-                            <h2>your cart is empty</h2>
-                            <Link href="/products" className="btn">fill it</Link>
-                        </div>
+                (!cart || cart.length === 0) ? (<div className="page flex justify-center items-center bg-red-800">
+                    <div className="text-center">
+                        <h2>your cart is empty</h2>
+                        <Link href="/products" className="btn">fill it</Link>
                     </div>
-                )
+                </div>
+                ) : <CheckoutForm />
             }
         </>
     );

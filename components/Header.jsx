@@ -15,7 +15,6 @@ const Header = () => {
     const [isActive, setIsActive] = useState(false);
 
     const handleChange = (e) => {
-        console.log(e.currentTarget, e.target, e.target.localName !== "li");
         if (e.target.localName !== "li" || e.target.localName !== "ul" || e.target.localName !== "input" || e.target.localName !== "svg") {
             setIsActive(false);
         }

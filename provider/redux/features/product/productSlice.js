@@ -34,7 +34,6 @@ const productSlice = createSlice({
         },
 
         setFilteredProductNames(state, action) {
-            console.log("Inside set", action.payload);
             const searchQuery = action.payload;
             if (searchQuery.length > 0) {
                 const allNames = state.products.filter((product) => {
@@ -42,7 +41,6 @@ const productSlice = createSlice({
                         return product.name;
                     }
                 });
-                console.log("inside if", allNames);
                 state.filteredProductNames = allNames;
             } else {
                 state.filteredProductNames = [];

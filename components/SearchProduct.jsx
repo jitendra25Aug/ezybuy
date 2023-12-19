@@ -12,14 +12,12 @@ import { useSelector, useDispatch } from "react-redux";
 const SearchProduct = ({ isActive, setActive }) => {
     const { searchProductStr, filteredProductNames } = useSelector((store) => store.product);
     const dispatch = useDispatch();
-    console.log("inside search");
 
     const handleInputChange = (e) => {
         dispatch(productSliceActions.setSearchProductStr(e.target.value));
     }
 
     useEffect(() => {
-        console.log("inside use", filteredProductNames, "filtername : ", searchProductStr);
         let timer;
         timer = setTimeout(() => {
             dispatch(productSliceActions.setFilteredProductNames(searchProductStr));
